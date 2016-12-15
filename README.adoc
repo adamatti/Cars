@@ -1,0 +1,13 @@
+# Pending
+* Sources
+** https://maxcarro.com[MaxCarro]
+** http://www.icarros.com.br[iCarros]
+** http://www.socarrao.com.br[So carrão]
+** http://www.poacarros.com[POA Carros]
+* Code
+** Persist on database
+
+# wip (need to improve)
+* Functionality
+** http://autocarro.com.br[AutoCarro]
+** Search UI
