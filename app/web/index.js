@@ -3,10 +3,11 @@
 const Hapi = require('hapi'),
       server = new Hapi.Server(),
       logger = require("log4js").getLogger("web"),
-      persist = require("../persist")
+      persist = require("../persist"),
+      config = require("../config")
 
 server.connection({ 
-    port: 8000 
+    port: config.port
 })
 
 server.register(require('inert'), err => {
