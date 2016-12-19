@@ -11,7 +11,7 @@ angular.module('app', ['ngResource','ngRoute','ngSanitize'])
 .controller('mainCtrl', function($scope,Rows,$routeParams){
     $scope.rows = Rows.query($routeParams);
     $scope.search = {}
-    $scope.columns = ["ano","valor","portas","marca","modelo","versao","combustivel",,"estado","cidade","cor","source"]
+    $scope.columns = ["ano","valor","portas","marca","modelo","versao","combustivel","estado","cidade","cor","source"]
 
     $scope.predicate=''; //Sort field
     $scope.reverse=false;

@@ -26,11 +26,11 @@ function isCambioOk(row){
 
 function isModeloOk(row){
     const invalid = [
+        "PALIO","SANDERO","FIESTA","VOYAGE","ETIOS",
+
         "ONIX","CLASSIC","CELTA","MONTANA","SPIN","MOBI","UNO","DOBLO","GRAND SIENA","STRADA","IDEA","SIENA","KA","HB20","PICANTO",
-        "MARCH","FRONTIER","LIVINA","CLIO","ETIOS","FOX","GOL","UP","DUSTER","CROSSFOX","SPACEFOX","SAVEIRO","BUGGY","CORSA","FIORINO",
-        "KOMBI",
-        
-        "PALIO","SANDERO","FIESTA","VOYAGE"
+        "MARCH","FRONTIER","LIVINA","CLIO","FOX","GOL","UP","DUSTER","CROSSFOX","SPACEFOX","SAVEIRO","BUGGY","CORSA","FIORINO",
+        "KOMBI"
     ]
     return checkInvalid(row,invalid, "modelo")
 }
@@ -42,10 +42,15 @@ function isCidadeOk(row){
 
 function isVersaoOk(row){
     const str = S(row.versao)
-    const invalid = ["HATCH","1.6","1.8","2.0"]
+    const invalid = ["HATCH","1.0","2.0"]
     return !_.find(invalid, item => {
         return str.contains(item)
     })
+}
+
+function isCorOk(row){
+    const invalid = ["BRANCA"]
+    return checkInvalid(row,invalid, "cor")
 }
 
 function shallPersist(row){
@@ -54,7 +59,8 @@ function shallPersist(row){
         isCidadeOk(row) &&
         isModeloOk(row) &&
         isCambioOk(row) && 
-        isVersaoOk(row)
+        isVersaoOk(row) && 
+        isCorOk(row)
 }
 
 module.exports = {
