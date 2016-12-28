@@ -2,8 +2,8 @@
 
 var config = {}
 
-config.minPrice = 15
-config.maxPrice = 45
+config.minPrice = process.env.MIN_VALUE || 15
+config.maxPrice = process.env.MAX_VALUE || 45
 
 config.state = 43 // 43 = RS
 config.type = 2 //2 = revendedora
